@@ -7,8 +7,8 @@ canvas.height = window.innerHeight;
 let g,h;
 
 function setUp(){
-  g = new GameObject(new Point(1,1,200,"yellow","A"),new Vector2(300,300),new Vector2(3,4),new Vector2(0,0));
-  h = new GameObject(new Point(1,1,200,"red","B"),new Vector2(700,400),new Vector2(-2,3),new Vector2(0,0));
+  g = new GameObject(new Point(1,1,200,"yellow","A"),new Vector2(300,300),new Vector2(7,8),new Vector2(0,0));
+  h = new GameObject(new Point(1,1,200,"red","B"),new Vector2(700,400),new Vector2(-6,-4),new Vector2(0,0));
 
   g.rad = new Vector2(1,1);
   h.rad = new Vector2(1,1);
@@ -49,20 +49,23 @@ function loop(){
 
     g.vel.sumVector(g.rad,g.tan);
     h.vel.sumVector(h.rad,h.tan);
-    g.pos.add(g.vel);
-    h.pos.add(h.vel);
+    for(let i=0; i<3;i++){
+      g.update();
+      h.update();
+    }
+
   }
 
   g.draw();
   h.draw();
 
-  g.vel.draw(context,g.pos.dx,g.pos.dy,50);
-  h.vel.draw(context,h.pos.dx,h.pos.dy,50);
+  g.vel.draw(context,g.pos.dx,g.pos.dy,30);
+  h.vel.draw(context,h.pos.dx,h.pos.dy,30);
 
-  g.rad.draw(context,g.pos.dx,g.pos.dy,50);
-  h.rad.draw(context,h.pos.dx,h.pos.dy,50);
-  g.tan.draw(context,g.pos.dx,g.pos.dy,50);
-  h.tan.draw(context,h.pos.dx,h.pos.dy,50);
+  g.rad.draw(context,g.pos.dx,g.pos.dy,30);
+  h.rad.draw(context,h.pos.dx,h.pos.dy,30);
+  g.tan.draw(context,g.pos.dx,g.pos.dy,30);
+  h.tan.draw(context,h.pos.dx,h.pos.dy,30);
 
 }
 

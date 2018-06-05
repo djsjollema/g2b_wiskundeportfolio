@@ -1,0 +1,13 @@
+body{
+  background-color: aliceblue;
+  margin: 0;
+  padding:0;
+}
+
+#canvas{
+  margin: 0;
+  padding:0;
+  display: block;
+  border: 2px black solid;
+  background-image: url("grid.png")
+}
